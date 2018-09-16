@@ -1,6 +1,7 @@
 # Pinky's Cloudflare VPS Firewall Script
 # Created By @Pink_P4nther <pinkp4nther@protonmail.com>
 # This script blocks all traffic except cloudflare ranges and a specified address
+# This can help with stopping mass scanners such as shodan and censys
 
 #ALLOW REQUESTS BACK WHEN WE MAKE FIRST REQUEST
 iptables -I OUTPUT -o ens3 -d 0.0.0.0/0 -j ACCEPT
