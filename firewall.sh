@@ -4,10 +4,10 @@
 # This can help with stopping mass scanners such as shodan and censys
 
 #ALLOW REQUESTS BACK WHEN WE MAKE FIRST REQUEST
-iptables -I OUTPUT -o ens3 -d 0.0.0.0/0 -j ACCEPT
-iptables -I INPUT -i ens3 -m state --state ESTABLISHED,RELATED -j ACCEPT
-ip6tables -I OUTPUT -o ens3 -d ::/0 -j ACCEPT
-ip6tables -I INPUT -i ens3 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -I OUTPUT -o eth0 -d 0.0.0.0/0 -j ACCEPT
+iptables -I INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+ip6tables -I OUTPUT -o eth0 -d ::/0 -j ACCEPT
+ip6tables -I INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 #ALLOW LOCAL TRAFFIC
 iptables -I INPUT -s 127.0.0.1 -j ACCEPT
